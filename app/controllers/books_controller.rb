@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @categories = Category.all
+    @categories = Category.all.order('name ASC')
   end
 
 

@@ -43,7 +43,7 @@
 
    <%= fields_for(@author_book) do |ab|%>
     <div class="form-group">
-      <%= collection_select(:authors, :id, @all_authors, :id,  :name, {},  {:multiple => true, size: 3, class: 'input-sm'})%>
+      <%= collection_select(:authors, :id, @all_authors, :id,  :name, {},  {:multiple => true, size: 5, class: 'input-sm'})%>
     </div>
   <%end%>
 
