@@ -1,6 +1,10 @@
-<h1>Editing Author</h1>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="single new">
+            <h3 class="side-title">Edit Author</h3>
+            <%= render 'form', author: @author%>
+        </div>
 
-<%= render 'form', author: @author %>
+    </div>
 
-<%= link_to 'Show', @author %> |
-<%= link_to 'Back', authors_path %>
+</div>

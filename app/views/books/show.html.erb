@@ -43,11 +43,12 @@
                     <h3 class="side-title">description</h3>
                     <p><%= @book.description%> </p>
                 </div>
-
-                <div class="books-show-bottom">
-                    <h3 class="side-title">Admin Function</h3>
-                    <%= link_to 'Edit',edit_book_path(@book.id)%> | <%= link_to 'Delete',book_path(@book),method: :delete, data: {confirm: 'Are you sure?'}%>
-                </div>
+                <%if user_signed_in?%>
+                    <div class="books-show-bottom">
+                        <h3 class="side-title">Admin Function</h3>
+                        <%= link_to 'Edit',edit_book_path(@book.id)%> | <%= link_to 'Delete',book_path(@book),method: :delete, data: {confirm: 'Are you sure?'}%>
+                    </div>
+                <% end %>
 
         </div>
     </div>

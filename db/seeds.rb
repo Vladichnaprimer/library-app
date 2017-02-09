@@ -35,4 +35,7 @@ Author.create([{name: 'Sam Ruby'},
         {name: 'Stephen King'},
         {name: 'Sam Ruby'},
         {name: 'Kathy Sierra'},
-        {name: 'Bert Bates'}])
+        {name: 'Bert Bates'},
+        {name: 'J.R.R. Tolkien'},
+        {name: 'George Martin'}
+        ])
