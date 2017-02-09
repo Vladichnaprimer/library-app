@@ -1,0 +1,15 @@
+
+<div class="row">
+    <%= render 'partial/sidebar'%>
+    <div class="col-md-9">
+        <% @books.each_slice(4) do |book| %>
+              <% book.each do |book| %>
+               <div class="col-md-3" style="margin-top: 40px;">
+
+                        <%= image_tag(book.image_url,  height: '250', width: '200')%>
+
+                </div>
+              <% end %>
+        <% end %>
+    </div>
+</div>

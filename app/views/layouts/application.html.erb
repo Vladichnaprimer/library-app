@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+
+    <header>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+       <div class="container">
+           <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                   <span class="sr-only">Toggle navigation</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+               </button>
+               <%= link_to 'Library', root_path, class: 'navbar-brand'%>
+           </div>
+           <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+               <ul class="nav navbar-nav">
+
+                 <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEW <span class="caret"></span></a>
+                   <ul class="dropdown-menu" role="menu">
+                     <li><%= link_to 'Category', new_category_path%></li>
+                     <li><%= link_to 'Author', new_author_path%></li>
+                     <li><%= link_to 'Book', new_book_path%></li>
+                   </ul>
+                 </li>
+                 <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MANAGE <span class="caret"></span></a>
+                   <ul class="dropdown-menu" role="menu">
+                     <li><%= link_to 'Category', categories_path%></li>
+                     <li><%= link_to 'Author', authors_path%></li>
+                   </ul>
+                 </li>
+               </ul>
+
+
+
+           </div>
+           <!-- /.navbar-collapse -->
+       </div>
+       <!-- /.container -->
+    </nav>
+    </header>
+
+
+       <div class="container">
+             <div id="message">
+               <% if notice%>
+                 <p class="notice"><%= notice %></p>
+               <%elsif alert %>
+                 <p class="alert"><%= alert %></p>
+               <%end%>
+             </div>
+
+             <%= yield %>
+       </div>
+  </body>
+</html>

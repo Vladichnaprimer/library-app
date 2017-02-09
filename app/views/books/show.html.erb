@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="single">
+            <h3 class="side-title"><%= @book.name%></h3>
+                <div class="books-show-left">
+                   <%= image_tag(@book.image_url, heigth: '300', width: '200')if @book.image_url.presence %>
+                </div>
+                <div class="books-show-right">
+                  <h3 class="side-title">Book Info<h3>
+                      <br>
+                    <table class="table table-hover" style= 'font-size: 16px' >
+                        <tr>
+                            <td>Category:</td>
+                            <td><%= @book.category.name if @book.category %></td>
+                        </tr>
+
+
+
+
+                    </table>
+                </div>
+                <div class="books-show-bottom">
+                    <div class="clearfix"></div>
+                    <h3 class="side-title">description</h3>
+                    <p><%= @book.description%> </p>
+                </div>
+
+                <div class="books-show-bottom">
+                    <h3 class="side-title">Admin Function</h3>
+                    <%= link_to 'Edit',edit_book_path(@book.id)%> | <%= link_to 'Delete',book_path(@book),method: :delete, data: {confirm: 'Are you sure?'}%>
+                </div>
+
+        </div>
+    </div>
+</div>
