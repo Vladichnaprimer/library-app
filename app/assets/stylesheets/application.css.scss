@@ -142,7 +142,10 @@
  .single li:last-child a{
    border-bottom: 0;
  }
-
+ tr td:last-child{
+     width:1%;
+     white-space:nowrap;
+ }
 
  #books-show h2 {
    background: #f4f4f4;
@@ -158,9 +161,10 @@
  }
  .books-show-right{
    float: left;
-   width: 60%;
+   margin-left: 50px;
+   width: 40%;
    padding: 20px;
-   margin-top: -60px;
+   margin-top: -85px;
  }
  .books-show-bottom{
    padding: 15px;

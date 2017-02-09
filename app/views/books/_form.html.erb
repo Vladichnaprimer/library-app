@@ -20,13 +20,30 @@
   </div>
 
   <div class="form-group">
+    <%= f.text_field :format, class:'input', placeholder: 'Format'%><br/>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :publisher, class:'input', placeholder: 'Publisher'%><br/>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :pages, class:'input', placeholder: 'Pages'%><br/>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :year, class:'input', placeholder: 'Year'%><br/>
+  </div>
+
+
+  <div class="form-group">
     <%= f.select :category_id,Category.all.collect {|x| [x.name,x.id]},
         {:inlcude_blank => 'select one'}, class:'select'%>
   </div>
 
    <%= fields_for(@author_book) do |ab|%>
     <div class="form-group">
-      <%= collection_select(:authors, :id, @all_authors, :id,  :name, {},  {:multiple => true, size: 2, class: 'input-sm'})%>
+      <%= collection_select(:authors, :id, @all_authors, :id,  :name, {},  {:multiple => true, size: 3, class: 'input-sm'})%>
     </div>
   <%end%>
 

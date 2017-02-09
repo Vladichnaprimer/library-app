@@ -10,13 +10,14 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+      @books = Book.all
   end
 
   # GET /authors/new
   def new
     @author = Author.new
 
- 
+
   end
 
   # GET /authors/1/edit
@@ -28,7 +29,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
 
-   
+
 
     respond_to do |format|
       if @author.save

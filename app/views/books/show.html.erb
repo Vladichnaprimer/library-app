@@ -2,17 +2,32 @@
     <div class="col-md-12">
         <div class="single">
             <h3 class="side-title"><%= @book.name%></h3>
+            <h5><i>
+                    by <% @book.authors.each do |a|%>
+                        <%= a.name%>
+                    <%end%>
+                </i>
+            </h5>
                 <div class="books-show-left">
-                   <%= image_tag(@book.image_url, heigth: '300', width: '200')if @book.image_url.presence %>
+                   <%= image_tag(@book.image_url, heigth: '250', width: '150')if @book.image_url.presence %>
                 </div>
                 <div class="books-show-right">
                   <h3 class="side-title">Book Info<h3>
                       <br>
-                    <table class="table table-hover" style= 'font-size: 16px' >
+                    <table class="table table-hover" style= 'font-size: 14px' >
                         <tr>
                             <td>Category:</td>
                             <td><%= @book.category.name if @book.category %></td>
                         </tr>
+                        <tr>
+                            <td>Publisher:</td>
+                            <td><%= @book.publisher%></td>
+                        </tr>
+                        <tr>
+                            <td>Format:</td>
+                            <td><%= @book.format%></td>
+                        </tr>
+
 
 
 

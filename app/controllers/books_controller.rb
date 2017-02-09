@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
 
   def show
+    @books = Book.all
     @categories = Category.all
     @authors = Author.all
     @author_books = Authorbook.all
@@ -75,6 +76,6 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:name, :description, :image_url, :category_id)
+      params.require(:book).permit(:name, :description, :image_url, :category_id, :format, :year, :pages, :publisher)
     end
 end

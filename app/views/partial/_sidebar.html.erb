@@ -6,7 +6,7 @@
         <div class="list-unstyled">
             <% @categories.each do |category|%>
                 <li><%= link_to  category_path(category.id)  do%>
-                    <%= category.name %><span class="pull-right"><%= category.books.count%></span>
+                    <%= category.name %><span class="pull-right"><%= category.books.count if category.books.count > 0%></span>
                 <%end%>
                 </li>
             <% end %>
