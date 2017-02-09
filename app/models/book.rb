@@ -3,7 +3,7 @@ class Book < ApplicationRecord
     has_many :authors, :through => :authorbooks
     belongs_to :category
 
-    validates :name, :description, :format, :pages, :year, :publisher, presence: true
+    validates :name, :description, :format, :pages, :year, :publisher, :category_id, presence: true
 
     validates :name, uniqueness: true
     validates :image_url, allow_blank: true, format: {

@@ -21,6 +21,7 @@ class BooksController < ApplicationController
     @author = Author.new
 
     @all_authors = Author.all
+    @author_book = Authorbook.new
     @author_book = @book.authorbooks.build
   end
 
@@ -30,8 +31,8 @@ class BooksController < ApplicationController
   end
 
   def create
+    @author_book = Authorbook.new
     @book = Book.new(book_params)
-
     params[:authors][:id].each do |author|
       if !author.empty?
           @book.authorbooks.build(:author_id => author)
