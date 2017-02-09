@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'authorbooks/index'
 
   get 'authorbooks/show'
